@@ -12,8 +12,16 @@ if [ -z "$2" ]
     echo "No email supplied"
     exit
 fi
+
 if [ ! -f "./cloudflare.ini" ]; then
   echo -e "# Cloudflare API token used by Certbot\ndns_cloudflare_api_token = NONE" > cloudflare.ini
+  chmod go-r cloudflare.ini
+fi
+
+if [ ! -f "./deploy-hook.sh" ]; then
+  echo "No deploy-hook.sh found"
+  cp ./deploy-hook.example.sh ./deploy-hook.sh
+  exit
 fi
 
 if grep -q NONE "./cloudflare.ini"; then
