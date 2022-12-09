@@ -25,5 +25,5 @@ and to install run
 add renew.sh to crontab
 
 ```sh
-crontab -l | {cat; echo "0 0 * * * /path/to/renew.sh"} |crontab -
+crontab -l | {cat; echo "0 4 * * * /path/to/renew.sh"} |crontab -
 ```
