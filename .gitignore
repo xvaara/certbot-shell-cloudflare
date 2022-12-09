@@ -2,3 +2,4 @@ conf
 tmp
 logs
 cloudflare.ini
+deploy-hook.sh

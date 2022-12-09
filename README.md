@@ -28,8 +28,16 @@ add renew.sh to crontab
 crontab -l | {cat; echo "0 4 * * * /path/to/renew.sh"} |crontab -
 ```
 
+## Management
+
 manage certs for example deletion:
 
 ```sh
 ./cb.sh delete --cert-name sub.domain.tld
+```
+
+update dns address. Needs to be predefined in cloudflare dashboard.
+
+```sh
+./ddns.sh
 ```
