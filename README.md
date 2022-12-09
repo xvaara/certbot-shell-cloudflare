@@ -36,8 +36,14 @@ manage certs for example deletion:
 ./cb.sh delete --cert-name sub.domain.tld
 ```
 
-update dns address. Needs to be predefined in cloudflare dashboard.
+update dns address. Tries to get local ip address, might fail if many ipv4 addresses
 
 ```sh
 ./ddns.sh
+```
+
+or with ip address
+
+```sh
+./ddns.sh 192.168.1.33
 ```

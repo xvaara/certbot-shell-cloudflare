@@ -1,7 +1,13 @@
 #!/bin/bash
 cd $(dirname "${BASH_SOURCE[0]}")
 
-current_ip=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | head -1 | awk '{ print $2 }')
+if [ -z "$1" ]
+  then
+    # try to get the current IP from the system
+    current_ip=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | head -1 | awk '{ print $2 }')
+  else
+    current_ip=$1
+fi
 
 echo "Current IP is $current_ip"
 
