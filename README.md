@@ -27,3 +27,9 @@ add renew.sh to crontab
 ```sh
 crontab -l | {cat; echo "0 4 * * * /path/to/renew.sh"} |crontab -
 ```
+
+manage certs for example deletion:
+
+```sh
+./cb.sh delete --cert-name sub.domain.tld
+```
